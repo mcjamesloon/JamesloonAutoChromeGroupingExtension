@@ -1,0 +1,14 @@
+{
+  "name": "Jamesloon's Chrome Auto Tab Grouping",
+  "description": "Extension to automate the grouping of Crhome tabs based on URL keys",
+  "version":"0.1.2",
+  "manifest_version":3,
+  "background":{
+    "service_worker":"background.js"
+  },
+  "permissions":["tabs","tabGroups","storage"],
+  "action":{
+    "default_popup":"index.html",
+    "default_icon":"images/icon.png"
+  }
+}
