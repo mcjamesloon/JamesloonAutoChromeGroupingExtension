@@ -15,8 +15,8 @@
 3. [How it works](#how_it_works)
 
 # Getting Started:
-1. Ensure the extention is installed into Chrome
-   1. The extention can be installed from the Chrome Web Store [HERE](https://chrome.google.com/webstore?hl=en)
+1. Ensure the extension is installed into Chrome
+   1. The extension can be installed from the Chrome Web Store [HERE](https://chrome.google.com/webstore?hl=en)
    2. For testing or dev versions, please download the .zip file in the dist folder.
 1. Open the extension from the extensions menu
 2. Click the "Groups" Tab on the top to navigate to the groups table
@@ -39,7 +39,7 @@
 ## Welcome
 > The Welcome tab gives an intoduction to the chrome extension for quick information as to how the extension works
 * About:
-  * This section is dedicated to the reasons why this extension exists and a little about it. It also (as ov V0.1.2) will have a link back to this GitHub Project
+  * This section is dedicated to the reasons why this extension exists and a little about it. It also (as of V0.1.3) will have a link back to this GitHub Project
 * How it works:
   * This section is dedicated to the simple expliantion of the extension's functionality and also has a URL parser to add entries to the Groups table or Blacklist
 
