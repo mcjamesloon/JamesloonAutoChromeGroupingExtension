@@ -3,15 +3,15 @@
 //Global Storage Keys
 /*
   theGroups = {title:colorValue};//The groups/entires to include for grouping
-  settings = {automateSNOW:true};//The extension settings. By default, tab grouping for SerivceNow is enabled.
-  activeExtension = true;//The value if the extension should be running group automation or not.
+  settings = {automateServiceNow:true};//The extension settings. By default, tab grouping for SerivceNow is enabled.
+  active = true;//The value if the extension should be running group automation or not.
   theBlacklist = [];//List of black-list values to exclude from the extension. Used for automatic associations only.
 */
 //Define Global Vars
 let theGroups = {};
 //Start Core variables:
-let settings = {automateSNOW:true,activeExtension:true};
-let theBlacklist = {"www":true};
+let settings = {automateServiceNow:false,active:true};
+let theBlacklist = {};
 
 //Start Listeners <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 chrome.runtime.onStartup.addListener(() => {
@@ -39,8 +39,8 @@ chrome.runtime.onInstalled.addListener((reason) => {
     //chrome.tabs.create({url: 'index.html'}); //< Here for de-bug and testing.
     //console.log('First Install');
     chrome.storage.sync.set({ 'theGroups': {}});
-    chrome.storage.sync.set({ 'settings': {automateSNOW:true,activeExtension:true}});
-    chrome.storage.sync.set({ 'theBlacklist':{"www":true}});
+    chrome.storage.sync.set({ 'settings': {automateServiceNow:false,active:true}});
+    chrome.storage.sync.set({ 'theBlacklist':{}});
   } else {
     chrome.storage.sync.get(['theGroups','settings','theBlacklist'], (data) => {
       syncVars(data);
@@ -51,9 +51,9 @@ chrome.tabs.onUpdated.addListener(function
   (tabId, changeInfo, tab) {
     //console.log(changeInfo);
     // read changeInfo data and do something with it (like read the url)
-    if ((changeInfo.status && changeInfo.status=='complete')&&(tab.groupId<0 && tab.url)) {//Filter out existing tab groups. Filter out anything other than Service-Now.
+    if ((changeInfo.status && changeInfo.status=='complete')&&(tab.groupId<0 && tab.url)) {
       chrome.storage.sync.get(['theGroups','settings','theBlacklist'], (data) => {
-        if (settings.activeExtension){
+        if (settings.active){
           syncVars(data);
           var check = checkConfig(tab);
           if (check){groupTabs(tab,check);}
@@ -65,7 +65,7 @@ chrome.tabs.onUpdated.addListener(function
 chrome.tabs.onAttached.addListener(function
   (tabId,attachInfo){
     chrome.tabs.get(tabId).then(function(onAttachedReturn){
-      if ((onAttachedReturn.groupId<0) && onAttachedReturn.url) {//Filter out existing tab groups. Filter out anything other than Service-Now.
+      if ((onAttachedReturn.groupId<0) && onAttachedReturn.url) {
         chrome.storage.sync.get(['theGroups','settings','theBlacklist'], (data) => {
           syncVars(data);
           var attachCheck = checkConfig(onAttachedReturn);
@@ -110,7 +110,7 @@ function checkConfig(tab){
     if (baseURL.includes(objKeys[x])){return objKeys[x];}
   }
   //Start ServiceNow check
-  if (settings.automateSNOW && (tab.url.toString().includes('.service-now') || tab.url.toString().includes('.servicenow.com'))){
+  if (settings.automateServiceNow && (tab.url.toString().includes('.service-now') || tab.url.toString().includes('.servicenow.com'))){
     return parseSNOW(baseURL);
   }//End ServiceNow check
 }//end cehckConfig
