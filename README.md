@@ -110,7 +110,8 @@ Example used for demonstration= "https://direct.example.com"
 Example used for demonstration="https://direct.example.com"
 1. Trigger is called:
     1. A tab completes loading
-    2. The Groups object has been modified in Chrome Storage.
+    2. A tab has been attached to a new window
+    3. The Groups object has been modified in Chrome Storage.
 3. Dervices the URL Key
 4. Checks the Blacklist
     1. Stops Script if found
