@@ -1,7 +1,7 @@
 # Jamesloon's Auto Chrome Grouping Extension:
 #### Welcome to Jamesloon's Auto Chrome Grouping Extension!
 * This chrome extension is designed to help users automate chrome tab groups by implementing automation around URL keys.
-#### This extension can be installed from the Chrome Web Store [HERE](https://chrome.google.com/webstore?hl=en)
+#### This extension can be installed from the Chrome Web Store [HERE](https://chrome.google.com/webstore/detail/jamesloons-chrome-auto-ta/igklemkgobkjnlopmjjofelnediibmbh)
 > **Disclaimer:** This project is released *as is* and does not have any implied warenties or garentees of any kind. Please adhere to google's terms of use and all local laws.
 
 # Table of Contents
@@ -16,7 +16,7 @@
 
 # Getting Started:
 1. Ensure the extension is installed into Chrome
-   1. The extension can be installed from the Chrome Web Store [HERE](https://chrome.google.com/webstore?hl=en)
+   1. The extension can be installed from the Chrome Web Store [HERE](https://chrome.google.com/webstore/detail/jamesloons-chrome-auto-ta/igklemkgobkjnlopmjjofelnediibmbh)
    2. For testing or dev versions, please download the .zip file in the dist folder.
 1. Open the extension from the extensions menu
 2. Click the "Groups" Tab on the top to navigate to the groups table
