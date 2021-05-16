@@ -2,7 +2,7 @@
 #### Welcome to Jamesloon's Auto Chrome Grouping Extension!
 * This chrome extension is designed to help users automate chrome tab groups by implementing automation around URL keys.
 #### This extension can be installed from the Chrome Web Store [HERE](https://chrome.google.com/webstore/detail/jamesloons-chrome-auto-ta/igklemkgobkjnlopmjjofelnediibmbh)
-> **Disclaimer:** This project is released *as is* and does not have any implied warenties or garentees of any kind. Please adhere to google's terms of use and all local laws.
+> **Disclaimer:** This project is released *as is* and does not have any implied warranties or guarantees of any kind. Please adhere to Google's terms of use and all local laws.
 
 # Table of Contents
 1. [Getting Started](#getting-started)
@@ -23,11 +23,11 @@
   1. This table houses the key values to identify the URLs to group.
   2. See [Interface > Groups](#groups) for a break down of this tab.
 1. In the Text Input Field above the table, enter a URL to see what keys are derived from it.
-  1. Example: https://chrome.google.com Will yeild a Group Key of "chrome.google"
+  1. Example: https://chrome.google.com Will yield a Group Key of "chrome.google"
 1. Click the Green "+" Sign next to the Group Key to add it to the table
 2. Your should now see the Entry of "chrome.google" under the Group Key with the Color of Grey
 3. Navigate to https://chrome.google.com and you should see it automatically create a tab group with the title of "chrome.google"
-4. Open the extention and open the "Groups" tab again.
+4. Open the extension and open the "Groups" tab again.
 5. Click the "Color" value of Grey and change it. Notice how the Tab Group color updates with it.
 6. Now Click the Red "-" icon next to "chrome.google" and close the tab with https://chrome.google.com open
 7. Re-open https://chrome.google.com and notice it no longer performs the grouping
@@ -37,11 +37,11 @@
 > This section is dedicated to explaining the User Interface of the Widget
 
 ## Welcome
-> The Welcome tab gives an intoduction to the chrome extension for quick information as to how the extension works
+> The Welcome tab gives an introduction to the chrome extension for quick information as to how the extension works
 * About:
   * This section is dedicated to the reasons why this extension exists and a little about it. It also (as of V0.1.3) will have a link back to this GitHub Project
 * How it works:
-  * This section is dedicated to the simple expliantion of the extension's functionality and also has a URL parser to add entries to the Groups table or Blacklist
+  * This section is dedicated to the simple explanation of the extension's functionality and also has a URL parser to add entries to the Groups table or Blacklist
 
 ## Groups
 > This section is for the Groups tab on the Chrome extension
@@ -76,7 +76,7 @@ Table:
   * Disabling this setting will prevent new groups from being created AND new tabs being automatically associated to those groups.
 * Automate ServiceNow Grouping:
   * Disabled by default
-  * Enable to automatically group ServiceNow OR Service-Now windows/environments. This was the origonal purpose of the extension.
+  * Enable to automatically group ServiceNow OR Service-Now windows/environments. This was the original purpose of the extension.
 
 ## URL_Parser
 > This part of the extension controls what aspects are seen by the script for automation and ability to add that key to the Groups or Blacklist
@@ -84,7 +84,7 @@ Table:
   * This is where the URL of the site to be grouped goes.
   * NOTE: This must start with https:// OR http:// as that is how the script is determining which part is useful
 * Value:
-  * This is the output of the Text Input that the script sees. This can be used to troubleshoot or add new group entires
+  * This is the output of the Text Input that the script sees. This can be used to troubleshoot or add new group entries
 * Green +
   * Add the Value to the Groups table
 * Red x
@@ -112,7 +112,7 @@ Example used for demonstration="https://direct.example.com"
     1. A tab completes loading
     2. A tab has been attached to a new window
     3. The Groups object has been modified in Chrome Storage.
-3. Dervices the URL Key
+3. Derives the URL Key
 4. Checks the Blacklist
     1. Stops Script if found
 5. Checks the defined Groups object
@@ -120,4 +120,4 @@ Example used for demonstration="https://direct.example.com"
 7. Checks if URL contains Service-Now OR ServiceNow
     1. Note: This is only called if the setting automateServiceNow is set to true
     2. Creates a new association on the Groups object if enabled.
-7. If there is a valid value returned from above, either create the group OR add the tab to the existing gorup for that window.
+7. If there is a valid value returned from above, either create the group OR add the tab to the existing group for that window.
